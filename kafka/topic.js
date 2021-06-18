@@ -1,6 +1,6 @@
 const { Kafka } = require("kafkajs");
 
-module.exports.run = async () => {
+const run = async () => {
     try {
         const kafka = new Kafka({
             "clientId": "myapp",
@@ -26,3 +26,5 @@ module.exports.run = async () => {
         process.exit(0);
     }
 }
+
+run();

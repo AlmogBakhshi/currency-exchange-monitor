@@ -20,4 +20,7 @@ app.use(express.json());
 // Routes
 require("./routes")(app);
 
+// kafka, get the messages
+require("./modules/kafka/consumer")();
+
 app.listen(port, () => { console.log(`Server running on port ${port}`.yellow.bold) });

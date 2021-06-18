@@ -13,13 +13,12 @@ module.exports = async () => {
         console.log("Connected!");
 
         await consumer.subscribe({
-            "topic": "Users",
-            "fromBeginning": true
+            "topic": "CurrencyExchange"
         });
 
         await consumer.run({
-            "eachMessage": async (result) => {
-                console.log(`Alert: ${result.message.value}`);
+            "eachMessage": async (res) => {
+                console.log(`Alert: ${res.message.value}`.green);
             }
         })
     }

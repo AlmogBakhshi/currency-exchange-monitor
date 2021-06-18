@@ -73,9 +73,8 @@ module.exports.updateT = async (req, res, T, notFoundMessage) => {
                 return res.status(201).json({
                     success: true,
                     data: update
-                })
-            }
-            )
+                });
+            })
         )
         .catch(err => {
             if (err.name === "ValidationError") {
